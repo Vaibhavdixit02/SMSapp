@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
         total = (TextView) findViewById(R.id.total);
         address = (EditText) findViewById(R.id.editText);
         submit = (Button) findViewById(R.id.button);
-//        input = (EditText) findViewById(R.id.input);
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, smsMessagesList);
         messages.setAdapter(arrayAdapter);
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SMS)
@@ -81,16 +80,6 @@ public class MainActivity extends AppCompatActivity {
         arrayAdapter.notifyDataSetChanged();
     }
 
-//public void onSendClick(View view) {
-//
-//    if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
-//            != PackageManager.PERMISSION_GRANTED) {
-//        getPermissionToReadSMS();
-//    } else {
-//        smsManager.sendTextMessage("07701056337", null, input.getText().toString(), null, null);
-//        Toast.makeText(this, "Message sent!", Toast.LENGTH_SHORT).show();
-//    }
-//}
 
         public void getPermissionToReadSMS() {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SMS)
